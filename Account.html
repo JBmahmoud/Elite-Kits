@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Account - Elite Kits</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Elite Kits - My Account - profile, orders, wishlist, addresses, and active coupons.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="account-page">
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="Home.html">Elite <span class="badge">Kits</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="About Us.html">About</a></li>
+          <li><a href="Careers.html">Careers</a></li>
+          <li><a href="Contact Us.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a href="Cart.html" class="icon-btn" id="cartBtn" title="Cart" aria-label="Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-badge" id="cartCount">0</span>
+        </a>
+        <button class="logout-btn" id="logoutBtn" type="button">
+          <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="mainContent">
+
+    <section class="account-hero">
+      <div class="account-hero-inner">
+        <span class="account-eyebrow"><i class="fa-solid fa-user-shield"></i> Member Account</span>
+        <h1>Welcome back, <span id="accountHeroName">Member</span></h1>
+        <p>Manage your profile, track orders, review your saved kits, and apply your active coupon at checkout. Signed in as <strong id="accountHeroEmail">you@example.com</strong>.</p>
+        <div class="account-hero-stats">
+          <div><strong id="accountStatOrders">0</strong><span>Orders</span></div>
+          <div><strong id="accountStatSpent">$0</strong><span>Total Spent</span></div>
+          <div><strong id="accountStatWishlist">0</strong><span>Wishlist Items</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="account-shell">
+
+      <aside class="account-side">
+        <button type="button" class="account-tab is-active" data-account-tab="profile"><i class="fa-solid fa-id-card"></i> Profile</button>
+        <button type="button" class="account-tab" data-account-tab="orders"><i class="fa-solid fa-receipt"></i> My Orders</button>
+        <button type="button" class="account-tab" data-account-tab="wishlist"><i class="fa-solid fa-heart"></i> Wishlist</button>
+        <button type="button" class="account-tab" data-account-tab="addresses"><i class="fa-solid fa-location-dot"></i> Saved Addresses</button>
+        <button type="button" class="account-tab" data-account-tab="coupons"><i class="fa-solid fa-ticket"></i> Coupons</button>
+        <button type="button" class="account-tab is-logout" id="accountLogout"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+      </aside>
+
+      <div class="account-main">
+
+        <nav class="account-mobile-tabs" aria-label="Account sections">
+          <button type="button" class="account-tab is-active" data-account-tab="profile"><i class="fa-solid fa-id-card"></i> Profile</button>
+          <button type="button" class="account-tab" data-account-tab="orders"><i class="fa-solid fa-receipt"></i> Orders</button>
+          <button type="button" class="account-tab" data-account-tab="wishlist"><i class="fa-solid fa-heart"></i> Wishlist</button>
+          <button type="button" class="account-tab" data-account-tab="addresses"><i class="fa-solid fa-location-dot"></i> Addresses</button>
+          <button type="button" class="account-tab" data-account-tab="coupons"><i class="fa-solid fa-ticket"></i> Coupons</button>
+        </nav>
+
+        <section class="account-panel is-active" id="account-panel-profile" aria-labelledby="account-panel-profile-title">
+          <div class="account-panel-head">
+            <div>
+              <h2 id="account-panel-profile-title">Profile</h2>
+              <p>Your Elite Kits account details from the secure backend profile.</p>
+            </div>
+            <button class="ek-mini-btn is-primary" type="button" data-profile-edit><i class="fa-solid fa-pen-to-square"></i> Edit Profile</button>
+          </div>
+          <div class="account-grid" data-profile-grid></div>
+          <div data-profile-forms></div>
+        </section>
+
+        <section class="account-panel" id="account-panel-orders" aria-labelledby="account-panel-orders-title">
+          <div class="account-panel-head">
+            <div>
+              <h2 id="account-panel-orders-title">My Orders</h2>
+              <p>Every order you have placed with the items, status, and totals.</p>
+            </div>
+            <a class="ek-mini-btn" href="Cart.html"><i class="fa-solid fa-cart-shopping"></i> Go to Cart</a>
+          </div>
+          <div data-orders-list></div>
+        </section>
+
+        <section class="account-panel" id="account-panel-wishlist" aria-labelledby="account-panel-wishlist-title">
+          <div class="account-panel-head">
+            <div>
+              <h2 id="account-panel-wishlist-title">Wishlist</h2>
+              <p>Saved kits ready to add to cart whenever you are.</p>
+            </div>
+            <a class="ek-mini-btn" href="Wishlist.html"><i class="fa-solid fa-heart"></i> Open full wishlist</a>
+          </div>
+          <div class="account-wishlist-grid" data-wishlist-grid></div>
+        </section>
+
+        <section class="account-panel" id="account-panel-addresses" aria-labelledby="account-panel-addresses-title">
+          <div class="account-panel-head">
+            <div>
+              <h2 id="account-panel-addresses-title">Saved Addresses</h2>
+              <p>Manage backend-saved checkout addresses and the default used at payment.</p>
+            </div>
+            <button class="ek-mini-btn is-primary" type="button" data-address-add><i class="fa-solid fa-plus"></i> Add Address</button>
+          </div>
+          <div data-address-form></div>
+          <div data-addresses-list></div>
+        </section>
+
+        <section class="account-panel" id="account-panel-coupons" aria-labelledby="account-panel-coupons-title">
+          <div class="account-panel-head">
+            <div>
+              <h2 id="account-panel-coupons-title">Coupons</h2>
+              <p>Your active coupon from the Spin Wheel applies automatically at checkout.</p>
+            </div>
+            <a class="ek-mini-btn" href="SpinWheel.html"><i class="fa-solid fa-gift"></i> Spin the Wheel</a>
+          </div>
+          <div data-coupons-list></div>
+        </section>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a class="footer-brand" href="Home.html">Elite <span>Kits</span></a>
+      <div class="footer-links">
+        <a href="Home.html">Home</a>
+        <a href="About Us.html">About Us</a>
+        <a href="Careers.html">Careers</a>
+        <a href="Contact Us.html">Contact</a>
+      </div>
+      <div class="social">
+        <a href="https://www.facebook.com/" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/" title="X" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com/" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://telegram.org/" title="Telegram" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 Elite Kits - All rights reserved.</div>
+  </footer>
+
+  <div class="ek-rate-overlay" id="ek2RateModal" role="dialog" aria-modal="true" aria-labelledby="ek2RateTitle" hidden>
+    <div class="ek-rate-modal">
+      <header class="ek-rate-modal-head">
+        <h2 id="ek2RateTitle" data-rate-title>Rate this order</h2>
+        <button type="button" class="ek-rate-modal-close" data-rate-close aria-label="Close rating dialog">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </header>
+      <div class="ek-rate-modal-body">
+        <p data-rate-desc>Order details</p>
+        <div class="ek-rate-stars" role="radiogroup" aria-label="Select rating">
+          <button type="button" class="ek-rate-star" data-rate-star="1" aria-label="1 star">&#9733;</button>
+          <button type="button" class="ek-rate-star" data-rate-star="2" aria-label="2 stars">&#9733;</button>
+          <button type="button" class="ek-rate-star" data-rate-star="3" aria-label="3 stars">&#9733;</button>
+          <button type="button" class="ek-rate-star" data-rate-star="4" aria-label="4 stars">&#9733;</button>
+          <button type="button" class="ek-rate-star" data-rate-star="5" aria-label="5 stars">&#9733;</button>
+        </div>
+        <p class="ek-rate-modal-note" data-rate-note hidden></p>
+      </div>
+      <footer class="ek-rate-modal-foot">
+        <button type="button" class="ek-rate-cancel" data-rate-close>Cancel</button>
+        <button type="button" class="ek-rate-save" data-rate-save disabled>Submit rating</button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

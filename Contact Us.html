@@ -1,0 +1,295 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Elite Kits</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Elite Kits - Contact Elite Kits page with premium football jersey shopping experience.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  
+  
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="Home.html">Elite <span class="badge">Kits</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="About Us.html">About</a></li>
+          <li><a href="Careers.html">Careers</a></li>
+<li><a class="active" aria-current="page" href="Contact Us.html">Contact</a></li>
+        </ul>
+      </nav>
+    <div class="nav-actions">
+<a href="Cart.html" class="icon-btn" id="cartBtn" title="Cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-badge" id="cartCount">0</span>
+      </a>
+      <button class="logout-btn" id="logoutBtn" type="button">
+        <i class="fa-solid fa-right-from-bracket"></i> Logout
+      </button>
+    </div>
+      </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="mainContent">
+  <section class="contact-hero">
+    <div class="contact-hero-orb co1"></div>
+    <div class="contact-hero-orb co2"></div>
+    <h1>Get In <span>Touch</span></h1>
+    <p>Questions, feedback, or special requests we'd love to hear from you.</p>
+  </section>
+
+  <div class="contact-container">
+
+    <!-- Info strip -->
+    <div class="info-strip">
+      <div class="info-strip-card">
+        <div class="info-strip-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="info-strip-text">
+          <h4>Address</h4>
+          <p>123 Stadium Road, Tripoli, Lebanon</p>
+        </div>
+      </div>
+      <div class="info-strip-card">
+        <div class="info-strip-icon"><i class="fa-solid fa-envelope"></i></div>
+        <div class="info-strip-text">
+          <h4>Email</h4>
+          <a href="mailto:EliteKits@gmail.com">EliteKits@gmail.com</a>
+        </div>
+      </div>
+      <div class="info-strip-card">
+        <div class="info-strip-icon"><i class="fa-solid fa-phone"></i></div>
+        <div class="info-strip-text">
+          <h4>Phone</h4>
+          <a href="tel:+961123456789">+961 123 456 789</a>
+        </div>
+      </div>
+      <div class="info-strip-card">
+        <div class="info-strip-icon"><i class="fa-brands fa-whatsapp"></i></div>
+        <div class="info-strip-text">
+          <h4>WhatsApp</h4>
+          <a href="https://wa.me/961123456789">Chat with us</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form + Map -->
+    <div class="contact-cols">
+
+      <!-- Form -->
+      <div class="form-card">
+        <h2><i class="fa-solid fa-paper-plane"></i> Send a Message</h2>
+        <p>Fill in the form below and we'll get back to you within 1-2 business days.</p>
+
+        <div id="applyBanner" class="cls-1fabae">
+          <i class="fa-solid fa-briefcase cls-39cb0b"></i>
+          Applying for: <span id="applyRoleName" class="cls-4e3d92"></span>
+        </div>
+
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name: </label>
+              <input type="text" id="cf-name" placeholder="e.g. Ahmad Khoury" autocomplete="name">
+              <div class="field-error" id="err-name">Please enter your name.</div>
+            </div>
+            <div class="form-group">
+              <label>Email Address: </label>
+              <input type="email" id="cf-email" placeholder="you@example.com" autocomplete="email">
+              <div class="field-error" id="err-email">Please enter a valid email.</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Subject: </label>
+            <select id="cf-subject">
+              <option value="">Select a topic...</option>
+              <option value="Order enquiry">Order enquiry</option>
+              <option value="Sizing help">Sizing help</option>
+              <option value="Return / exchange">Return / exchange</option>
+              <option value="Custom printing">Custom printing</option>
+              <option value="Wholesale / bulk order">Wholesale / bulk order</option>
+              <option value="Other">Other</option>
+            </select>
+            <div class="field-error" id="err-subject">Please select a subject.</div>
+          </div>
+
+          <div class="form-group">
+            <label>Message: </label>
+            <textarea id="cf-message" placeholder="Tell us how we can help..."></textarea>
+            <div class="field-error" id="err-message">Please write your message.</div>
+          </div>
+
+          <!-- CV field - apply mode only -->
+          <div id="cvField" class="cls-c93774 ek-cv-field">
+            <div class="form-group">
+              <label class="ek-cv-label" for="cf-cv"><i class="fa-solid fa-paperclip"></i> Attach CV (PDF or .docx)</label>
+              <input class="ek-cv-native" type="file" id="cf-cv" accept=".pdf,.docx">
+              <div class="ek-cv-zone">
+                <button class="ek-cv-trigger" id="ek2CvTrigger" type="button" aria-controls="cf-cv">
+                  <i class="fa-solid fa-cloud-arrow-up"></i> Choose CV
+                </button>
+                <div class="ek-cv-info">
+                  <p class="ek-cv-helper" id="ek2CvHelper">CV must be a PDF or Word document (.docx), max 5 MB.</p>
+                  <p class="ek-cv-name" id="ek2CvName" hidden></p>
+                </div>
+                <button class="ek-cv-clear" id="ek2CvClear" type="button" hidden aria-label="Remove selected CV">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+            </div>
+            <div id="cvError" class="cls-f05136 ek-cv-error" hidden></div>
+          </div>
+
+          <div id="formErrorSummary" class="cls-2b8e4f"></div>
+
+          <button class="form-submit" id="cf-submit" type="submit">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span id="submitLabel">Send Message</span>
+          </button>
+
+          <div class="form-success" id="contactMsg" aria-live="polite" role="status">
+            <i class="fa-solid fa-circle-check cls-272c14"></i>
+            <span id="contactMsgText"></span>
+          </div>
+        </form>
+      </div>
+
+      <!-- Map + hours -->
+      <div class="contact-map-col">
+        <div class="map-card">
+          <div class="map-embed">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.743046348159!2d35.835508!3d34.436238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1521f4482f1cfbf7%3A0x5aefb3f5896f3ef1!2sTripoli%2C%20Lebanon!5e0!3m2!1sen!2slb!4v1705250450000"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <div class="hours-card">
+            <h3><i class="fa-solid fa-clock"></i> Business Hours</h3>
+            <div class="hours-row"><span>Monday - Wednesday</span><span class="hours-open">9:00 AM - 6:00 PM</span></div>
+            <div class="hours-row"><span>Thursday - Friday</span><span class="hours-open">9:00 AM - 7:00 PM</span></div>
+            <div class="hours-row"><span>Saturday</span><span class="hours-open">10:00 AM - 4:00 PM</span></div>
+            <div class="hours-row"><span>Sunday</span><span class="hours-closed">Closed</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick page links -->
+    <div class="pages-section">
+      <h2><i class="fa-solid fa-compass"></i> Explore Our Pages</h2>
+      <div class="pages-grid">
+        <a href="Home.html" class="page-link-card">
+          <div class="pl-icon"><i class="fa-solid fa-house"></i></div>
+          <div class="pl-text"><h4>Home</h4><p>Browse all leagues & jerseys</p></div>
+        </a>
+        <a href="About Us.html" class="page-link-card">
+          <div class="pl-icon"><i class="fa-solid fa-users"></i></div>
+          <div class="pl-text"><h4>About Us</h4><p>Our story & team</p></div>
+        </a>
+        <a href="Careers.html" class="page-link-card">
+          <div class="pl-icon"><i class="fa-solid fa-briefcase"></i></div>
+          <div class="pl-text"><h4>Careers</h4><p>Open positions at Elite Kits</p></div>
+        </a>
+        <a href="Wishlist.html" class="page-link-card">
+          <div class="pl-icon"><i class="fa-solid fa-heart"></i></div>
+          <div class="pl-text"><h4>Wishlist</h4><p>Your saved jerseys</p></div>
+        </a>
+        <a href="Size Guide.html" class="page-link-card">
+          <div class="pl-icon"><i class="fa-solid fa-ruler"></i></div>
+          <div class="pl-text"><h4>Size Guide</h4><p>Find your perfect fit</p></div>
+        </a>
+        <a href="SpinWheel.html" class="page-link-card">
+          <div class="pl-icon cls-1ccebc"><i class="fa-solid fa-dice"></i></div>
+          <div class="pl-text"><h4>Daily Spin</h4><p>Win discounts every day</p></div>
+        </a>
+        <a href="Cart.html" class="page-link-card">
+          <div class="pl-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+          <div class="pl-text"><h4>Cart</h4><p>Review & checkout your order</p></div>
+        </a>
+        <a href="Premier League.html" class="page-link-card">
+          <div class="pl-icon cls-617cb0"><i class="fa-solid fa-futbol"></i></div>
+          <div class="pl-text"><h4>Premier League</h4><p>English football jerseys</p></div>
+        </a>
+        <a href="Laliga.html" class="page-link-card">
+          <div class="pl-icon cls-3fd223"><i class="fa-solid fa-futbol"></i></div>
+          <div class="pl-text"><h4>La Liga</h4><p>Spanish football jerseys</p></div>
+        </a>
+        <a href="Serie A.html" class="page-link-card">
+          <div class="pl-icon cls-cb9f2f"><i class="fa-solid fa-futbol"></i></div>
+          <div class="pl-text"><h4>Serie A</h4><p>Italian football jerseys</p></div>
+        </a>
+        <a href="Bundesliga.html" class="page-link-card">
+          <div class="pl-icon cls-b1cfa3"><i class="fa-solid fa-futbol"></i></div>
+          <div class="pl-text"><h4>Bundesliga</h4><p>German football jerseys</p></div>
+        </a>
+        <a href="League 1.html" class="page-link-card">
+          <div class="pl-icon cls-798873"><i class="fa-solid fa-futbol"></i></div>
+          <div class="pl-text"><h4>Ligue 1</h4><p>French football jerseys</p></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+      <h2><i class="fa-solid fa-circle-question"></i> Frequently Asked Questions</h2>
+      <div class="faq-list" id="faqList">
+        <details class="faq-item">
+          <summary>How long does delivery take?</summary>
+          <p>Standard delivery usually takes 5-10 business days depending on destination.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I customize my jersey?</summary>
+          <p>Yes. Custom name and/or number can be added from the cart for an extra $5 per jersey.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I return a jersey?</summary>
+          <p>Yes. We offer a 14-day return policy for eligible non-customized jerseys.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do I choose the right size?</summary>
+          <p>Use the Size Guide page before checkout to compare measurements.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What happens if an item is out of stock?</summary>
+          <p>Out-of-stock jerseys cannot be added to cart until availability is restored.</p>
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a class="footer-brand" href="Home.html">Elite <span>Kits</span></a>
+      <div class="footer-links">
+        <a href="Home.html">Home</a>
+        <a href="About Us.html">About Us</a>
+        <a href="Careers.html">Careers</a>
+        <a href="Contact Us.html">Contact</a>
+      </div>
+      <div class="social">
+        <a href="https://www.facebook.com/" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/" title="X" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com/" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://telegram.org/" title="Telegram" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 Elite Kits - All rights reserved.</div>
+  </footer>
+
+  <script src="app.js"></script>
+  
+  
+</body>
+</html>
+
+

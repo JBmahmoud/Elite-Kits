@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Elite Kits - Payment - Elite Kits page with premium football jersey shopping experience.">
+  <title>Payment - Elite Kits</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="Home.html">
+        Elite <span class="badge">Kits</span>
+      </a>
+
+      <nav class="nav">
+                <ul class="nav-links">
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="About Us.html">About</a></li>
+          <li><a href="Careers.html">Careers</a></li>
+<li><a href="Contact Us.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions"></div>
+    </div>
+  </header>
+
+  <!-- Page -->
+  <main id="mainContent" class="page payment-page">
+    <div class="container">
+      <section class="panel payment-panel">
+        <h1>Secure Checkout</h1>
+        <p class="lead">Complete your payment to get your jersey delivered fast.</p>
+
+        <!-- Active coupon banner (injected by JS only after backend confirms the coupon is real, valid,
+             unexpired, and owned by the signed-in user. Stale localStorage/sessionStorage values must
+             never reveal it. Starts hidden in HTML to prevent a flash before JS runs. -->
+        <div id="paymentCouponBanner" class="cls-7467a1" hidden>
+          <i class="fa-solid fa-tag"></i> Coupon <span id="payCouponCode" class="cls-6d995f"></span>
+          applied <span id="payCouponDesc"></span>
+        </div>
+
+        <div id="paymentSuccess" class="payment-success" hidden></div>
+
+        <form class="payment-form" action="#" method="post" novalidate>
+          <div class="form-row">
+            <label for="name">Full Name</label>
+            <input class="input" type="text" id="name" name="name" placeholder="John Doe" autocomplete="cc-name" required>
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email Address</label>
+            <input class="input" type="email" id="email" name="email" placeholder="john@example.com" autocomplete="email" required>
+          </div>
+
+          <div class="form-row">
+            <label for="card">Card Number</label>
+            <input class="input" type="text" id="card" name="card" placeholder="1234 5678 9012 3456" autocomplete="cc-number" inputmode="numeric" maxlength="19" required>
+          </div>
+
+          <div class="form-row two-col">
+            <div>
+              <label for="expiry">Expiry Date</label>
+              <input class="input" type="text" id="expiry" name="expiry" placeholder="MM/YY" autocomplete="cc-exp" inputmode="numeric" maxlength="5" required>
+            </div>
+            <div>
+              <label for="cvv">CVV</label>
+              <input class="input" type="text" id="cvv" name="cvv" placeholder="123" autocomplete="cc-csc" inputmode="numeric" maxlength="4" required>
+            </div>
+          </div>
+
+          <!-- Contact Phone (required so we can reach the customer for delivery) -->
+          <div class="form-row phone-row" data-phone-row>
+            <label for="phoneNumber">Contact Phone</label>
+            <p class="phone-help">Used by delivery to reach you about this order.</p>
+            <div class="phone-input-grid">
+              <div class="phone-country-control">
+                <span class="phone-country-flag" data-phone-flag aria-hidden="true">
+                  <img class="phone-country-flag-img" src="https://flagcdn.com/w20/lb.png" alt="">
+                  <span class="phone-country-flag-fallback">LB</span>
+                </span>
+                <select class="input phone-country-select" id="phoneCountry" autocomplete="tel-country-code" required></select>
+                <span class="phone-dial-code" data-phone-dial>+961</span>
+              </div>
+              <input class="input phone-number-input" type="tel" id="phoneNumber" name="phoneNumber" inputmode="tel" autocomplete="tel-national" placeholder="70 123 456" required>
+            </div>
+            <p class="form-error" id="phoneError" hidden></p>
+          </div>
+
+          <!-- Billing Address -->
+          <div class="form-row billing-address-row">
+            <label>Billing Address</label>
+            <div class="three-col">
+              <select class="input" id="lbState" required>
+                <option value="" disabled selected>Select Governorate</option>
+                <option>Beirut</option>
+                <option>Mount Lebanon</option>
+                <option>North</option>
+                <option>Akkar</option>
+                <option>Baalbek-Hermel</option>
+                <option>Bekaa</option>
+                <option>Nabatieh</option>
+                <option>South</option>
+              </select>
+
+              <input class="input" type="text" id="city" placeholder="City" autocomplete="address-level2" required>
+              <input class="input" type="text" id="road" placeholder="Road / Street" autocomplete="street-address" required>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-pay">Pay Now</button>
+
+          <!-- Rating Panel: HIDDEN by default. Only shown by app.js after a successful
+               checkout response that includes a real order ID. Do NOT show stars before
+               the order exists - the user must not be able to rate before an order. -->
+          <div class="rating-panel cls-cb4589" id="ratingPanel" hidden>
+            <h2 class="rating-title">Rate your experience</h2>
+            <p class="lead small">Your feedback helps us improve.</p>
+
+            <div class="stars" id="stars" aria-label="Rating stars">
+              <button type="button" class="star" data-star="1" aria-label="1 star">&#9733;</button>
+              <button type="button" class="star" data-star="2" aria-label="2 stars">&#9733;</button>
+              <button type="button" class="star" data-star="3" aria-label="3 stars">&#9733;</button>
+              <button type="button" class="star" data-star="4" aria-label="4 stars">&#9733;</button>
+              <button type="button" class="star" data-star="5" aria-label="5 stars">&#9733;</button>
+            </div>
+
+            <div class="rating-actions">
+              <button type="button" class="btn-pay" id="submitRating">Submit Rating</button>
+              <button type="button" class="btn-skip" id="skipRating">Skip</button>
+            </div>
+
+            <div class="rating-note cls-cb4589" id="ratingNote" hidden></div>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a class="footer-brand" href="Home.html">Elite <span>Kits</span></a>
+      <div class="footer-links">
+        <a href="Home.html">Home</a>
+        <a href="About Us.html">About Us</a>
+        <a href="Careers.html">Careers</a>
+        <a href="Contact Us.html">Contact</a>
+      </div>
+      <div class="social">
+        <a href="https://www.facebook.com/" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/" title="X" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com/" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://telegram.org/" title="Telegram" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 Elite Kits - All rights reserved.</div>
+  </footer>
+  
+  
+<script src="app.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign In - Elite Kits</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign in or create your Elite Kits account to access premium football jerseys.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  
+</head>
+<body class="auth-page">
+
+  <!-- ===== SIGN IN VIEW (image left, form right) ===== -->
+  <div id="signinView" class="auth-split">
+    <div class="auth-image-side cls-0695ff">
+      <img src="images/Sign In.png" alt="Football players in various jerseys" class="auth-hero-img">
+    </div>
+    <div class="auth-form-side cls-0695ff">
+      <div class="light-gray-container">
+        
+        <div class="auth-brand-hero cls-142661">
+          <a class="brand cls-1e4f73" href="Home.html">Elite<span class="badge cls-dbf9e8">Kits</span></a>
+          <div class="cls-564062">2025/26 Season · Official-grade jerseys</div>
+        </div>
+        
+        <h1 class="cls-15a7be">SIGN IN TO ELITE KITS</h1>
+        <p class="lead cls-8d08fb">Manage your saved jerseys, cart, rewards, and checkout faster.</p>
+        <div id="messageBox"></div>
+
+        <form id="signinForm" autocomplete="on">
+          <label for="email" class="custom-label">Email</label>
+          <input class="custom-input cls-e50689" type="email" id="email" name="email" placeholder="example@email.com" required autocomplete="email">
+
+          <label for="password" class="custom-label">Password</label>
+          <div class="input-wrap cls-e50689">
+            <input class="custom-input cls-3acded" type="password" id="password" name="password" placeholder="Your password" required autocomplete="current-password">
+            <button type="button" class="pw-toggle-btn" id="toggleSigninPassword" aria-label="Show password" title="Show password">
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
+
+          <div class="remember-row cls-f7683c">
+            <input type="checkbox" id="rememberMe">
+            <label for="rememberMe" class="cls-6b40ec">Remember me for 7 days</label>
+          </div>
+
+          <button type="submit" class="btn-form cls-4b111a">
+            Sign In
+          </button>
+        </form>
+
+        <div class="guest-link auth-guest-action cls-722e49" id="guestAction">
+          <a href="Home.html" class="cls-6fdd87">Continue browsing as guest</a>
+          <p>Guest users can browse and add items, but checkout requires sign in.</p>
+        </div>
+
+        <div class="auth-mode-toggle cls-71281c">
+          New to Elite Kits? <a id="switchToSignup" class="cls-3cb981">Create an account</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SIGN UP VIEW (image left, form right) ===== -->
+  <div id="signupView" class="auth-split signup-split cls-f2100d">
+    <div class="auth-image-side cls-0695ff">
+      <img src="images/Sign In.png" alt="Football players in various jerseys" class="auth-hero-img">
+    </div>
+    <div class="auth-form-side cls-0695ff">
+      <div class="light-gray-container">
+      
+      <div class="auth-brand-hero cls-142661">
+        <a class="brand cls-1e4f73" href="Home.html">Elite<span class="badge cls-dbf9e8">Kits</span></a>
+        <div class="cls-564062">2025/26 Season · Official-grade jerseys</div>
+      </div>
+      
+      <h1 class="cls-6f8436">Create Account</h1>
+      <p class="lead cls-5f8569">Join Elite Kits and access exclusive deals on premium jerseys.</p>
+      <div id="signupMessageBox"></div>
+
+      <div class="signup-progress" id="signupProgress" data-progress="0" role="progressbar" aria-label="Sign up progress" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0">
+        <div class="signup-progress-track" aria-hidden="true">
+          <span class="signup-progress-fill" id="signupProgressFill"></span>
+        </div>
+        <ol class="signup-progress-steps">
+          <li class="signup-progress-step is-active" data-signup-step="account">
+            <span class="signup-step-circle">
+              <span class="signup-step-number">1</span>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+            </span>
+            <span class="signup-step-label">Account</span>
+          </li>
+          <li class="signup-progress-step" data-signup-step="details">
+            <span class="signup-step-circle">
+              <span class="signup-step-number">2</span>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+            </span>
+            <span class="signup-step-label">Details</span>
+          </li>
+          <li class="signup-progress-step" data-signup-step="security">
+            <span class="signup-step-circle">
+              <span class="signup-step-number">3</span>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+            </span>
+            <span class="signup-step-label">Security</span>
+          </li>
+          <li class="signup-progress-step" data-signup-step="confirm">
+            <span class="signup-step-circle">
+              <span class="signup-step-number">4</span>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+            </span>
+            <span class="signup-step-label">Confirm</span>
+          </li>
+        </ol>
+      </div>
+
+      <form id="signupForm" autocomplete="on">
+        <label for="name" class="custom-label">Name</label>
+        <input class="custom-input cls-e50689" type="text" id="name" name="name" placeholder="John Doe" required autocomplete="name">
+
+        <label for="signupEmail" class="custom-label">Email</label>
+        <input class="custom-input cls-e50689" type="email" id="signupEmail" name="email" placeholder="example@email.com" required autocomplete="email">
+
+        <label for="birthdate" class="custom-label">Birthdate</label>
+        <div class="cls-24d512">
+          <input class="custom-input" type="text" id="birthdate" name="birthdate" placeholder="DD/MM/YYYY" autocomplete="bday">
+          <input type="date" id="birthdateNative" tabindex="-1" class="cls-65af08">
+          <button type="button" id="birthDatePickerBtn" class="pw-toggle-btn" aria-label="Pick date" title="Pick date">
+            <i class="fa-regular fa-calendar"></i>
+          </button>
+        </div>
+
+        <label for="signupPassword" class="custom-label">Password</label>
+        <div class="input-wrap cls-e50689">
+          <input class="custom-input" type="password" id="signupPassword" name="password" placeholder="Create a password" required autocomplete="new-password">
+          <button type="button" class="pw-toggle-btn" id="toggleSignupPassword" aria-label="Show password" title="Show password">
+            <i class="fa-regular fa-eye"></i>
+          </button>
+        </div>
+
+        <label for="confirm" class="custom-label">Confirm Password</label>
+        <div class="input-wrap cls-f7683c">
+          <input class="custom-input" type="password" id="confirm" name="confirmPassword" placeholder="Confirm your password" required autocomplete="new-password">
+          <button type="button" class="pw-toggle-btn" id="toggleSignupConfirm" aria-label="Show password" title="Show password">
+            <i class="fa-regular fa-eye"></i>
+          </button>
+        </div>
+
+        <button type="submit" class="btn-form cls-4b111a">
+          Create Account
+        </button>
+      </form>
+
+      <div class="auth-mode-toggle cls-71281c">
+        Already have an account? <a id="switchToSignin" class="cls-3cb981">Sign In</a>
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

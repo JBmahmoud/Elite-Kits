@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home - Elite Kits</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Elite Kits - Home - Elite Kits page with premium football jersey shopping experience.">
+  <link rel="stylesheet" href="style.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+<!-- Navbar -->
+<header class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="Home.html">Elite <span class="badge">Kits</span></a>
+    <nav>
+                      <ul class="nav-links">
+          <li><a class="active" aria-current="page" href="Home.html">Home</a></li>
+          <li><a href="About Us.html">About</a></li>
+          <li><a href="Careers.html">Careers</a></li>
+<li><a href="Contact Us.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="nav-actions">
+<a href="Cart.html" class="icon-btn" id="cartBtn" title="Cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-badge" id="cartCount">0</span>
+      </a>
+      <button class="logout-btn" id="logoutBtn" type="button">
+        <i class="fa-solid fa-right-from-bracket"></i> Logout
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow"><i class="fa-solid fa-shirt"></i> 2025 / 26 Season Collection</div>
+      <h1 class="hero-title">Wear Your<br><span class="hero-accent">Club's Pride</span></h1>
+      <p class="hero-desc">Official-grade football jerseys from the world's top leagues. Authentic designs, premium materials, worldwide delivery.</p>
+      <div class="hero-ctas">
+        <a href="#leagues" class="hero-btn-primary"><i class="fa-solid fa-shirt"></i> Shop Jerseys</a>
+        <a href="About Us.html" class="hero-btn-secondary">Our Story <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="hero-trust">
+        <span><i class="fa-solid fa-shield-halved"></i> Secure Checkout</span>
+        <span><i class="fa-solid fa-truck-fast"></i> Worldwide Shipping</span>
+        <span><i class="fa-solid fa-rotate-left"></i> 14-Day Returns</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+  <!-- Animated badge with pulse ring -->
+  <div class="hero-badge-wrap">
+    <div class="hero-badge-pulse"></div>
+    <div class="hero-badge-ring" id="heroBadge">
+      <div class="hero-badge-inner">
+        <span class="hb-num" id="hbCount">0</span>
+        <span class="hb-label">Jerseys</span>
+      </div>
+    </div>
+    <!-- Orbiting icons -->
+    <div class="orbit-ring">
+      <div class="orbit-dot orbit-dot-1"><i class="fa-solid fa-futbol"></i></div>
+      <div class="orbit-dot orbit-dot-2"><i class="fa-solid fa-shirt"></i></div>
+      <div class="orbit-dot orbit-dot-3"><i class="fa-solid fa-trophy"></i></div>
+      <div class="orbit-dot orbit-dot-4"><i class="fa-solid fa-star"></i></div>
+    </div>
+  </div>
+
+  <!-- Scrolling league pills -->
+  <div class="hero-league-pills-wrap">
+    <div class="hlp-marquee">
+      <div class="hlp-track" id="hlpTrack">
+        <a href="Premier League.html" class="hlp hlp-pl">Premier League</a>
+        <a href="Laliga.html"         class="hlp hlp-la">La Liga</a>
+        <a href="Serie A.html"        class="hlp hlp-sa">Serie A</a>
+        <a href="Bundesliga.html"     class="hlp hlp-bu">Bundesliga</a>
+        <a href="League 1.html"       class="hlp hlp-l1">Ligue 1</a>
+        <a href="Rest Of The World.html" class="hlp hlp-wl">World</a>
+        <!-- duplicate for seamless loop -->
+        <a href="Premier League.html" class="hlp hlp-pl">Premier League</a>
+        <a href="Laliga.html"         class="hlp hlp-la">La Liga</a>
+        <a href="Serie A.html"        class="hlp hlp-sa">Serie A</a>
+        <a href="Bundesliga.html"     class="hlp hlp-bu">Bundesliga</a>
+        <a href="League 1.html"       class="hlp hlp-l1">Ligue 1</a>
+        <a href="Rest Of The World.html" class="hlp hlp-wl">World</a>
+      </div>
+    </div>
+    <p class="hlp-hint"><i class="fa-solid fa-hand-pointer"></i> Click a league to explore</p>
+  </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll"><span>Scroll</span><i class="fa-solid fa-chevron-down"></i></div>
+</section>
+
+<!-- Stats Bar -->
+<section class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div><span class="stat-num" data-target="500">0</span><span class="stat-suffix">+</span></div>
+      <span class="stat-label">Jerseys Available</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div><span class="stat-num" data-target="6">0</span></div>
+      <span class="stat-label">Top Leagues</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div><span class="stat-suffix">$</span><span class="stat-num" data-target="25">0</span></div>
+      <span class="stat-label">Starting Price</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div><span class="stat-num" data-target="14">0</span><span class="stat-suffix">-Day</span></div>
+      <span class="stat-label">Free Returns</span>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features-section">
+  <div class="features-inner">
+    <div class="section-eyebrow">Why Choose Us</div>
+    <h2 class="section-heading">Everything a Fan Needs</h2>
+    <div class="features-grid">
+      <div class="feat-card feat-1">
+        <div class="feat-icon"><i class="fa-solid fa-medal"></i></div>
+        <h3>Official-Grade Quality</h3>
+        <p>Stitched crests, crisp prints, breathable fabrics - built to last matchday after matchday.</p>
+      </div>
+      <div class="feat-card feat-2">
+        <div class="feat-icon"><i class="fa-solid fa-pen-nib"></i></div>
+        <h3>Custom Printing</h3>
+        <p>Add your name and number for just +$5. Each jersey reviewed before shipping.</p>
+      </div>
+      <div class="feat-card feat-3">
+        <div class="feat-icon"><i class="fa-solid fa-truck-fast"></i></div>
+        <h3>Delivery All Over Lebanon</h3>
+        <p>Shipping to every corner of Lebanon. Fast, reliable, fully insured.</p>
+      </div>
+      <div class="feat-card feat-4">
+        <div class="feat-icon"><i class="fa-solid fa-rotate-left"></i></div>
+        <h3>Easy Returns</h3>
+        <p>Changed your mind? 14-day hassle-free returns, no questions asked.</p>
+      </div>
+      <div class="feat-card feat-5">
+        <div class="feat-icon"><i class="fa-solid fa-tags"></i></div>
+        <h3>Best Prices</h3>
+        <p>Official-quality jerseys starting from just $25. No hidden fees, ever.</p>
+      </div>
+      <div class="feat-card feat-6">
+        <div class="feat-icon"><i class="fa-solid fa-headset"></i></div>
+        <h3>Fan-First Support</h3>
+        <p>Real humans, not bots. Our team responds within 1-2 business days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Leagues -->
+<main class="container" id="mainContent">
+  <section class="panel" id="leagues">
+
+    <div class="leagues-header">
+      <h2 class="leagues-main-title"><i class="fa-solid fa-futbol"></i> Shop by League</h2>
+      <p class="lead">Choose a league to explore the full 2025/26 collection with every Home, Away, and Third kit.</p>
+    </div>
+
+    <div class="league-selector-grid" role="list" aria-label="Football leagues">
+      <a class="league-selector-tile league-selector-premier" href="Premier League.html" role="listitem" data-league="premier">
+        <span class="league-selector-logo-wrap">
+          <img src="images/premier.webp" class="league-logo-lg" alt="Premier League">
+        </span>
+        <span class="league-selector-copy">
+          <span class="league-selector-region">England</span>
+          <span class="league-selector-name">Premier League</span>
+          <span class="league-selector-cta">Explore collection <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+        </span>
+      </a>
+
+      <a class="league-selector-tile league-selector-laliga" href="Laliga.html" role="listitem" data-league="laliga">
+        <span class="league-selector-logo-wrap">
+          <img src="images/laliga.png" class="league-logo-lg" alt="La Liga">
+        </span>
+        <span class="league-selector-copy">
+          <span class="league-selector-region">Spain</span>
+          <span class="league-selector-name">La Liga</span>
+          <span class="league-selector-cta">Explore collection <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+        </span>
+      </a>
+
+      <a class="league-selector-tile league-selector-seriea" href="Serie A.html" role="listitem" data-league="seriea">
+        <span class="league-selector-logo-wrap">
+          <img src="images/seriea.png" class="league-logo-lg" alt="Serie A">
+        </span>
+        <span class="league-selector-copy">
+          <span class="league-selector-region">Italy</span>
+          <span class="league-selector-name">Serie A</span>
+          <span class="league-selector-cta">Explore collection <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+        </span>
+      </a>
+
+      <a class="league-selector-tile league-selector-bundesliga" href="Bundesliga.html" role="listitem" data-league="bundesliga">
+        <span class="league-selector-logo-wrap">
+          <img src="images/bundesligalogo.png" class="league-logo-lg" alt="Bundesliga">
+        </span>
+        <span class="league-selector-copy">
+          <span class="league-selector-region">Germany</span>
+          <span class="league-selector-name">Bundesliga</span>
+          <span class="league-selector-cta">Explore collection <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+        </span>
+      </a>
+
+      <a class="league-selector-tile league-selector-ligue1" href="League 1.html" role="listitem" data-league="ligue1">
+        <span class="league-selector-logo-wrap">
+          <img src="images/ligue 1 logo.png" class="league-logo-lg" alt="Ligue 1">
+        </span>
+        <span class="league-selector-copy">
+          <span class="league-selector-region">France</span>
+          <span class="league-selector-name">Ligue 1</span>
+          <span class="league-selector-cta">Explore collection <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+        </span>
+      </a>
+
+      <a class="league-selector-tile league-selector-rest" href="Rest Of The World.html" role="listitem" data-league="rest">
+        <span class="league-selector-logo-wrap">
+          <img src="images/restoftheworl.png" class="league-logo-lg" alt="Rest of the World">
+        </span>
+        <span class="league-selector-copy">
+          <span class="league-selector-region">International</span>
+          <span class="league-selector-name">Rest of the World</span>
+          <span class="league-selector-cta">Explore collection <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+        </span>
+      </a>
+    </div>
+
+  </section>
+</main>
+
+<!-- How It Works -->
+<section class="how-section">
+  <div class="how-inner">
+    <div class="section-eyebrow">Simple Process</div>
+    <h2 class="section-heading">Order in 3 Easy Steps</h2>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="how-num">01</div>
+        <div class="how-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <h3>Browse &amp; Pick</h3>
+        <p>Choose from 500+ jerseys across the world's top leagues.</p>
+      </div>
+      <div class="how-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="how-step">
+        <div class="how-num">02</div>
+        <div class="how-icon"><i class="fa-solid fa-pen-nib"></i></div>
+        <h3>Customize</h3>
+        <p>Add your name &amp; number for just +$5. Pick your size.</p>
+      </div>
+      <div class="how-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="how-step">
+        <div class="how-num">03</div>
+        <div class="how-icon"><i class="fa-solid fa-box-open"></i></div>
+        <h3>Delivered to You</h3>
+        <p>Secure checkout, tracked worldwide shipping, right to your door.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Strip -->
+<section class="cta-strip">
+  <div class="cta-strip-inner">
+    <h2>Ready to rep your club?</h2>
+    <p>Join thousands of fans who trust Elite Kits for their matchday kit.</p>
+    <a href="#leagues" class="hero-btn-primary"><i class="fa-solid fa-shirt"></i> Shop Now</a>
+  </div>
+</section>
+
+<!-- Footer -->
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a class="footer-brand" href="Home.html">Elite <span>Kits</span></a>
+      <div class="footer-links">
+        <a href="Home.html">Home</a>
+        <a href="About Us.html">About Us</a>
+        <a href="Careers.html">Careers</a>
+        <a href="Contact Us.html">Contact</a>
+      </div>
+      <div class="social">
+        <a href="https://www.facebook.com/" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/" title="X" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com/" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://telegram.org/" title="Telegram" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 Elite Kits - All rights reserved.</div>
+  </footer>
+
+<!-- Back to top -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+  <i class="fa-solid fa-arrow-up-long"></i>
+</button>
+
+
+  
+<script src="app.js"></script>
+  
+  
+  
+
+</body>
+</html>
+
+
+

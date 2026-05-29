@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LaLiga - Elite Kits</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Elite Kits - LaLiga - Elite Kits page with premium football jersey shopping experience.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  
+</head>
+<body class="league-page" data-league-name="La Liga" data-league-key="laliga">
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="Home.html">
+        Elite <span class="badge">Kits</span>
+      </a>
+
+      <nav>
+                        <ul class="nav-links">
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="About Us.html">About</a></li>
+          <li><a href="Careers.html">Careers</a></li>
+<li><a href="Contact Us.html">Contact</a></li>
+        </ul>
+      </nav>
+
+    <div class="nav-actions">
+<a href="Cart.html" class="icon-btn" id="cartBtn" title="Cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-badge" id="cartCount">0</span>
+      </a>
+      <button class="logout-btn" id="logoutBtn" type="button">
+        <i class="fa-solid fa-right-from-bracket"></i> Logout
+      </button>
+    </div>
+      </div>
+  </header>
+
+  <!-- Content -->
+  <main id="mainContent" class="league-main">
+    <section class="league-page-section league league-laliga" data-league-section>
+      <div class="league-page-shell">
+        <header class="league-page-header">
+          <h1 class="league-page-title">
+            <img src="images/laliga.png" class="league-logo" alt="La Liga">
+            La Liga Jerseys 25/26
+          </h1>
+          <p class="lead">Search, sort, and filter the full La Liga jersey collection.</p>
+          <div class="league-controls" data-league-controls>
+            <label class="league-control" for="teamSearch">
+              Search team or kit
+              <input id="teamSearch" class="league-search-input" type="search" placeholder="Search for a team..." autocomplete="off">
+            </label>
+            <label class="league-control" for="leagueSortSelect">
+              Sort
+              <select id="leagueSortSelect" class="league-sort-select">
+                <option value="default">Featured</option>
+                <option value="name-asc">Name A-Z</option>
+                <option value="name-desc">Name Z-A</option>
+                <option value="price-asc">Price low to high</option>
+                <option value="price-desc">Price high to low</option>
+                <option value="stock-desc">Most stock</option>
+                <option value="popular">Popular</option>
+                <option value="newest">Newest</option>
+              </select>
+            </label>
+            <label class="league-control" for="leagueStockFilter">
+              Stock
+              <select id="leagueStockFilter" class="league-stock-select">
+                <option value="all">All</option>
+                <option value="in">In Stock</option>
+                <option value="out">Out of Stock</option>
+              </select>
+            </label>
+            <div id="teamSuggestions" class="league-suggestions" hidden></div>
+          </div>
+        </header>
+        <div class="products-grid" data-products-grid aria-live="polite"></div>
+        <div class="products-empty" data-products-empty hidden>No products found.</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a class="footer-brand" href="Home.html">Elite <span>Kits</span></a>
+      <div class="footer-links">
+        <a href="Home.html">Home</a>
+        <a href="About Us.html">About Us</a>
+        <a href="Careers.html">Careers</a>
+        <a href="Contact Us.html">Contact</a>
+      </div>
+      <div class="social">
+        <a href="https://www.facebook.com/" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/" title="X" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com/" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://telegram.org/" title="Telegram" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 Elite Kits - All rights reserved.</div>
+  </footer>
+
+  
+  
+  
+
+  <!-- Back to top -->
+  <button class="league-back-top" id="leagueBackTop" aria-label="Back to top" title="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+<script src="app.js"></script>
+
+  
+  
+  
+
+</body>
+</html>
+
+
+
+
+
+

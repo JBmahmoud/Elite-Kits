@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Size Guide - Elite Kits</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Elite Kits - Size Guide - Elite Kits page with premium football jersey shopping experience.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  
+  
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="Home.html">Elite <span class="badge">Kits</span></a>
+      <nav>
+                        <ul class="nav-links">
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="About Us.html">About</a></li>
+          <li><a href="Careers.html">Careers</a></li>
+<li><a href="Contact Us.html">Contact</a></li>
+        </ul>
+      </nav>
+    <div class="nav-actions">
+<a href="Cart.html" class="icon-btn" id="cartBtn" title="Cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-badge" id="cartCount">0</span>
+      </a>
+      <button class="logout-btn" id="logoutBtn" type="button">
+        <i class="fa-solid fa-right-from-bracket"></i> Logout
+      </button>
+      </div>
+      </div>
+  </header>
+
+  <main id="mainContent">
+  <div class="sg-hero">
+    <h1>Size <span>Guide</span></h1>
+    <p>Find your perfect fit before you buy. No guessing, no returns.</p>
+  </div>
+
+  <div class="sg-container">
+
+    <!-- Size Finder Tool -->
+    <div class="finder-card">
+      <h2><i class="fa-solid fa-ruler"></i> Smart Size Finder</h2>
+      <p>Enter your measurements and we'll recommend the right size for you.</p>
+      <div class="finder-row">
+        <div class="finder-field">
+          <label>Chest (cm)</label>
+          <input type="number" id="chestInput" placeholder="e.g. 95" min="50" max="160">
+        </div>
+        <div class="finder-field">
+          <label>Height (cm)</label>
+          <input type="number" id="heightInput" placeholder="e.g. 175" min="140" max="220">
+        </div>
+        <div class="finder-field">
+          <label>Fit Preference</label>
+          <select id="fitSelect">
+            <option value="regular">Regular fit</option>
+            <option value="slim">Slim / athletic fit</option>
+            <option value="relaxed">Relaxed / loose fit</option>
+          </select>
+        </div>
+      </div>
+      <button class="finder-btn" id="findSizeBtn">
+        <i class="fa-solid fa-magnifying-glass"></i> Find My Size
+      </button>
+      <div class="finder-result" id="finderResult">
+        <div class="rec-size" id="recSize">M</div>
+        <p id="recNote">Based on your measurements and fit preference.</p>
+      </div>
+    </div>
+
+    <!-- Size Tables -->
+    <div class="sg-section">
+      <h2><i class="fa-solid fa-table"></i> Size Charts</h2>
+      <div class="size-tabs">
+        <button class="size-tab active" data-table="adult">Adult Jerseys</button>
+        <button class="size-tab" data-table="youth">Youth Jerseys</button>
+        <button class="size-tab" data-table="goalkeeper">Goalkeeper Kits</button>
+      </div>
+
+      <!-- Adult -->
+      <div id="table-adult" class="size-table-wrap">
+        <table class="size-table">
+          <thead>
+            <tr>
+              <th>Size</th>
+              <th>Chest (cm)</th>
+              <th>Chest (inches)</th>
+              <th>Length (cm)</th>
+              <th>Shoulder (cm)</th>
+              <th>Fits Height</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="size-badge">XS</span></td><td>80-84</td><td>31-33"</td><td>67</td><td>41</td><td>155-163cm</td></tr>
+            <tr><td><span class="size-badge">S</span></td><td>85-91</td><td>33-36"</td><td>69</td><td>43</td><td>163-170cm</td></tr>
+            <tr><td><span class="size-badge">M</span></td><td>92-99</td><td>36-39"</td><td>72</td><td>45</td><td>170-177cm</td></tr>
+            <tr><td><span class="size-badge">L</span></td><td>100-107</td><td>39-42"</td><td>74</td><td>47</td><td>177-183cm</td></tr>
+            <tr><td><span class="size-badge">XL</span></td><td>108-116</td><td>43-46"</td><td>77</td><td>49</td><td>183-188cm</td></tr>
+            <tr><td><span class="size-badge">2XL</span></td><td>117-126</td><td>46-50"</td><td>80</td><td>52</td><td>188-194cm</td></tr>
+            <tr><td><span class="size-badge">3XL</span></td><td>127-137</td><td>50-54"</td><td>83</td><td>55</td><td>194cm+</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Youth -->
+      <div id="table-youth" class="size-table-wrap cls-cb4589">
+        <table class="size-table">
+          <thead>
+            <tr>
+              <th>Size</th>
+              <th>Age (approx.)</th>
+              <th>Chest (cm)</th>
+              <th>Height (cm)</th>
+              <th>Length (cm)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="size-badge">YXS</span></td><td>4-5 yrs</td><td>54-58</td><td>104-112</td><td>44</td></tr>
+            <tr><td><span class="size-badge">YS</span></td><td>6-7 yrs</td><td>59-63</td><td>112-122</td><td>47</td></tr>
+            <tr><td><span class="size-badge">YM</span></td><td>8-9 yrs</td><td>64-68</td><td>122-132</td><td>50</td></tr>
+            <tr><td><span class="size-badge">YL</span></td><td>10-11 yrs</td><td>69-74</td><td>132-143</td><td>54</td></tr>
+            <tr><td><span class="size-badge">YXL</span></td><td>12-13 yrs</td><td>75-82</td><td>143-155</td><td>58</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Goalkeeper -->
+      <div id="table-goalkeeper" class="size-table-wrap cls-cb4589">
+        <table class="size-table">
+          <thead>
+            <tr>
+              <th>Size</th>
+              <th>Chest (cm)</th>
+              <th>Length (cm)</th>
+              <th>Sleeve (cm)</th>
+              <th>Note</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="size-badge">S</span></td><td>86-92</td><td>71</td><td>62</td><td>Slightly roomier for padded undergarments</td></tr>
+            <tr><td><span class="size-badge">M</span></td><td>93-100</td><td>74</td><td>64</td><td>-</td></tr>
+            <tr><td><span class="size-badge">L</span></td><td>101-108</td><td>77</td><td>66</td><td>-</td></tr>
+            <tr><td><span class="size-badge">XL</span></td><td>109-118</td><td>80</td><td>68</td><td>Recommended to size up if unsure</td></tr>
+            <tr><td><span class="size-badge">2XL</span></td><td>119-128</td><td>83</td><td>70</td><td>-</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- How to Measure -->
+    <div class="sg-section">
+      <h2><i class="fa-solid fa-person-dots-from-line"></i> How to Measure</h2>
+      <div class="measure-diagram">
+        <div class="diagram-svg">
+          <svg viewBox="0 0 200 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Body silhouette -->
+            <ellipse cx="100" cy="38" rx="28" ry="28" fill="#0d1e3a" stroke="#0866ff" stroke-width="1.5"/>
+            <rect x="68" y="64" width="64" height="100" rx="10" fill="#0d1e3a" stroke="#0866ff" stroke-width="1.5"/>
+            <!-- Arms -->
+            <rect x="32" y="68" width="36" height="14" rx="7" fill="#0d1e3a" stroke="#0866ff" stroke-width="1.5"/>
+            <rect x="132" y="68" width="36" height="14" rx="7" fill="#0d1e3a" stroke="#0866ff" stroke-width="1.5"/>
+            <!-- Legs -->
+            <rect x="70" y="162" width="26" height="90" rx="8" fill="#0d1e3a" stroke="#0866ff" stroke-width="1.5"/>
+            <rect x="104" y="162" width="26" height="90" rx="8" fill="#0d1e3a" stroke="#0866ff" stroke-width="1.5"/>
+            <!-- Measurement lines -->
+            <!-- Chest -->
+            <line x1="32" y1="88" x2="168" y2="88" stroke="#f43f5e" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <circle cx="32" cy="88" r="4" fill="#f43f5e"/>
+            <circle cx="168" cy="88" r="4" fill="#f43f5e"/>
+            <text x="175" y="92" font-size="11" fill="#f43f5e" font-weight="bold">1</text>
+            <!-- Shoulder -->
+            <line x1="68" y1="68" x2="132" y2="68" stroke="#0866ff" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <circle cx="68" cy="68" r="4" fill="#0866ff"/>
+            <circle cx="132" cy="68" r="4" fill="#0866ff"/>
+            <text x="175" y="72" font-size="11" fill="#0866ff" font-weight="bold">2</text>
+            <!-- Length -->
+            <line x1="158" y1="66" x2="158" y2="162" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <circle cx="158" cy="66" r="4" fill="#a78bfa"/>
+            <circle cx="158" cy="162" r="4" fill="#a78bfa"/>
+            <text x="163" y="118" font-size="11" fill="#a78bfa" font-weight="bold">3</text>
+          </svg>
+        </div>
+        <div>
+          <ul class="measure-list">
+            <li>
+              <span class="measure-num cls-8f77cf">1</span>
+              <div>
+                <h5>Chest / Bust</h5>
+                <p>Wrap the tape around the fullest part of your chest, keeping it horizontal and snug but not tight.</p>
+              </div>
+            </li>
+            <li>
+              <span class="measure-num">2</span>
+              <div>
+                <h5>Shoulder Width</h5>
+                <p>Measure from the tip of one shoulder across the back to the tip of the other shoulder.</p>
+              </div>
+            </li>
+            <li>
+              <span class="measure-num cls-263482">3</span>
+              <div>
+                <h5>Jersey Length</h5>
+                <p>Measure from the highest point of the shoulder down to your preferred length (usually hip-level).</p>
+              </div>
+            </li>
+            <li>
+              <span class="measure-num cls-b11398">4</span>
+              <div>
+                <h5>Pro Tip</h5>
+                <p>If you're between two sizes, choose the larger one for a more comfortable, authentic matchday fit.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tips -->
+    <div class="sg-section">
+      <h2><i class="fa-solid fa-lightbulb"></i> Fit Tips</h2>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-icon"><i class="fa-solid fa-arrows-left-right"></i></div>
+          <div>
+            <h4>In-Between Sizes?</h4>
+            <p>Size up for a relaxed feel or choose the smaller size for a snug, athletic fit.</p>
+          </div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon"><i class="fa-solid fa-shirt"></i></div>
+          <div>
+            <h4>Match Fit vs Fan Fit</h4>
+            <p>Player match jerseys run slim. Fan/replica editions offer a more relaxed silhouette.</p>
+          </div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon"><i class="fa-solid fa-rotate-left"></i></div>
+          <div>
+            <h4>Free Exchanges</h4>
+            <p>If your size isn't right, we offer hassle-free exchanges within 14 days of delivery.</p>
+          </div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon"><i class="fa-solid fa-pen-nib"></i></div>
+          <div>
+            <h4>Custom Printing</h4>
+            <p>Adding a name/number? Sizing stays the same - customization doesn't affect measurements.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a class="footer-brand" href="Home.html">Elite <span>Kits</span></a>
+      <div class="footer-links">
+        <a href="Home.html">Home</a>
+        <a href="About Us.html">About Us</a>
+        <a href="Careers.html">Careers</a>
+        <a href="Contact Us.html">Contact</a>
+      </div>
+      <div class="social">
+        <a href="https://www.facebook.com/" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/" title="X" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com/" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://telegram.org/" title="Telegram" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 Elite Kits - All rights reserved.</div>
+  </footer>
+
+  
+  
+  <script src="app.js"></script>
+  
+  
+
+</body>
+</html>
+
+

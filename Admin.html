@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Elite Kits - Admin Dashboard - Elite Kits page with premium football jersey shopping experience.">
+  <title>Admin Dashboard - Elite Kits</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="admin-page">
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="sb-logo">Elite <span>Kits</span></span>
+      <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <nav class="sidebar-nav">
+      <button class="sb-item active" data-tab="overview">
+        <i class="fa-solid fa-chart-pie"></i> Overview
+      </button>
+      <button class="sb-item" data-tab="orders">
+        <i class="fa-solid fa-box"></i> Orders
+      </button>
+      <button class="sb-item" data-tab="users">
+        <i class="fa-solid fa-users"></i> Users
+      </button>
+      <button class="sb-item" data-tab="products">
+        <i class="fa-solid fa-shirt"></i> Products
+      </button>
+      <button class="sb-item" data-tab="ratings">
+        <i class="fa-solid fa-star"></i> Ratings
+      </button>
+      <button class="sb-item cls-c451fd" data-tab="messages">
+        <i class="fa-solid fa-envelope"></i> Messages
+        <span id="unreadBadge" class="cls-f53d94">0</span>
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button class="sb-logout" id="adminLogout">
+        <i class="fa-solid fa-right-from-bracket"></i> Logout
+      </button>
+    </div>
+  </aside>
+
+  <!-- Overlay for mobile -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Main content -->
+  <main class="main-wrap" id="mainContent">
+
+    <!-- Top bar -->
+    <header class="topbar">
+      <button class="topbar-menu" id="menuToggle" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="topbar-title" id="topbarTitle">Overview</div>
+      <div class="topbar-right">
+        <span class="admin-badge"><i class="fa-solid fa-shield-halved"></i> Admin</span>
+        <span class="admin-name" id="adminName">Admin</span>
+      </div>
+    </header>
+
+    <!-- Tab: Overview -->
+    <section class="tab-panel active" id="tab-overview">
+      <div class="page-head">
+        <h1>Dashboard Overview</h1>
+        <p class="page-sub">Real-time snapshot of Elite Kits store performance.</p>
+        <div class="analytics-filterbar">
+          <label for="adminAnalyticsRange">Range</label>
+          <select class="filter-select" id="adminAnalyticsRange">
+            <option value="all">All time</option>
+            <option value="today">Today</option>
+            <option value="7d">Last 7 days</option>
+            <option value="30d">Last 30 days</option>
+            <option value="month">This month</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- KPI Cards -->
+      <div class="kpi-grid" id="kpiGrid">
+        <div class="kpi-card">
+          <div class="kpi-icon revenue"><i class="fa-solid fa-dollar-sign"></i></div>
+          <div class="kpi-data">
+            <div class="kpi-label">Total Revenue</div>
+            <div class="kpi-value" id="kpiRevenue">$0.00</div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon orders"><i class="fa-solid fa-box"></i></div>
+          <div class="kpi-data">
+            <div class="kpi-label">Total Orders</div>
+            <div class="kpi-value" id="kpiOrders">0</div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon users"><i class="fa-solid fa-users"></i></div>
+          <div class="kpi-data">
+            <div class="kpi-label">Registered Users</div>
+            <div class="kpi-value" id="kpiUsers">0</div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon rating"><i class="fa-solid fa-star"></i></div>
+          <div class="kpi-data">
+            <div class="kpi-label">Avg. Rating</div>
+            <div class="kpi-value" id="kpiRating">-</div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon jerseys"><i class="fa-solid fa-shirt"></i></div>
+          <div class="kpi-data">
+            <div class="kpi-label">Jerseys Sold</div>
+            <div class="kpi-value" id="kpiSold">0</div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon stock"><i class="fa-solid fa-warehouse"></i></div>
+          <div class="kpi-data">
+            <div class="kpi-label">Low Stock Items</div>
+            <div class="kpi-value" id="kpiLowStock">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Business Analytics -->
+      <div class="analytics-grid" id="analyticsGrid">
+        <div class="analytics-card analytics-card-wide">
+          <div class="analytics-head">
+            <h2><i class="fa-solid fa-chart-line"></i> Revenue Trend</h2>
+            <span>Last 7 active days</span>
+          </div>
+          <div class="analytics-plot" id="chartRevenueTrend"></div>
+        </div>
+
+        <div class="analytics-card">
+          <div class="analytics-head">
+            <h2><i class="fa-solid fa-circle-notch"></i> Orders by Status</h2>
+            <span>Fulfillment mix</span>
+          </div>
+          <div class="analytics-plot" id="chartStatusMix"></div>
+        </div>
+
+        <div class="analytics-card">
+          <div class="analytics-head">
+            <h2><i class="fa-solid fa-layer-group"></i> Sales by League</h2>
+            <span>Units sold</span>
+          </div>
+          <div class="analytics-plot" id="chartLeagueSales"></div>
+        </div>
+
+        <div class="analytics-card">
+          <div class="analytics-head">
+            <h2><i class="fa-solid fa-shirt"></i> Best Sellers</h2>
+            <span>Top jerseys</span>
+          </div>
+          <div class="analytics-plot" id="chartTopProducts"></div>
+        </div>
+
+        <div class="analytics-card">
+          <div class="analytics-head">
+            <h2><i class="fa-solid fa-user-check"></i> Customer Value</h2>
+            <span>Top spenders</span>
+          </div>
+          <div class="analytics-plot" id="chartCustomerValue"></div>
+        </div>
+
+        <div class="analytics-card">
+          <div class="analytics-head">
+            <h2><i class="fa-solid fa-star"></i> Rating Spread</h2>
+            <span>Customer feedback</span>
+          </div>
+          <div class="analytics-plot" id="chartRatingSpread"></div>
+        </div>
+
+        <div class="analytics-card analytics-card-wide">
+          <div class="analytics-head">
+            <h2><i class="fa-solid fa-warehouse"></i> Stock Risk</h2>
+            <span>Low stock by league</span>
+          </div>
+          <div class="analytics-plot" id="chartInventoryRisk"></div>
+        </div>
+      </div>
+
+      <!-- Recent Orders -->
+      <div class="section-card">
+        <div class="section-card-head">
+          <h2><i class="fa-solid fa-clock-rotate-left"></i> Recent Orders</h2>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" id="recentOrdersTable">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Date</th>
+                <th>Items</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Rating</th>
+              </tr>
+            </thead>
+            <tbody id="recentOrdersBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Top selling jerseys -->
+      <div class="section-card">
+        <div class="section-card-head">
+          <h2><i class="fa-solid fa-trophy"></i> Top Selling Jerseys</h2>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" id="topJerseysTable">
+            <thead>
+              <tr><th>Jersey</th><th>League</th><th>Units Sold</th><th>Revenue</th></tr>
+            </thead>
+            <tbody id="topJerseysBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab: Orders -->
+    <section class="tab-panel" id="tab-orders">
+      <div class="page-head">
+        <h1>All Orders</h1>
+        <p class="page-sub">View and manage every placed order.</p>
+      </div>
+
+      <div class="toolbar">
+        <input class="search-input" id="orderSearch" type="text" placeholder="Search by ID, customer, or status...">
+        <select class="filter-select" id="orderStatusFilter">
+          <option value="">All Statuses</option>
+          <option>Pending</option>
+          <option>Confirmed</option>
+          <option>Shipped</option>
+          <option>Delivered</option>
+          <option>Cancelled</option>
+        </select>
+        <a class="btn-action" href="/api/admin/export/orders.csv" download><i class="fa-solid fa-file-csv"></i> Export Orders</a>
+      </div>
+
+      <div class="section-card">
+        <div class="table-wrap">
+          <table class="data-table" id="allOrdersTable">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Date</th>
+                <th>Items</th>
+                <th>Total</th>
+                <th>Address</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="allOrdersBody"></tbody>
+          </table>
+        </div>
+        <div class="ek-empty" id="ordersEmpty" hidden>
+          <div class="ek-empty-icon"><i class="fa-solid fa-box-open"></i></div>
+          <h3>No orders yet</h3>
+          <p>When customers place an order it will appear here. You can update statuses inline.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab: Users -->
+    <section class="tab-panel" id="tab-users">
+      <div class="page-head">
+        <h1>Registered Users</h1>
+        <p class="page-sub">All accounts on the platform.</p>
+      </div>
+
+      <div class="toolbar">
+        <input class="search-input" id="userSearch" type="text" placeholder="Search by name or email...">
+        <a class="btn-action" href="/api/admin/export/users.csv" download><i class="fa-solid fa-file-csv"></i> Export Users</a>
+      </div>
+
+      <div class="section-card">
+        <div class="table-wrap">
+          <table class="data-table" id="usersTable">
+            <thead>
+              <tr>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Created</th>
+                <th>Last Login</th>
+                <th>Orders</th>
+                <th>Total Spent</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="usersBody"></tbody>
+          </table>
+        </div>
+        <div class="ek-empty" id="usersEmpty">
+          <div class="ek-empty-icon"><i class="fa-solid fa-users-slash"></i></div>
+          <h3>No users yet</h3>
+          <p>Sign-ups created from the Auth page will appear here with their order history.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab: Products -->
+    <section class="tab-panel" id="tab-products">
+      <div class="page-head">
+        <h1>Products</h1>
+        <p class="page-sub">Manage the live jersey catalogue, current stock, size stock, and product availability.</p>
+      </div>
+
+      <div class="toolbar">
+        <input class="search-input" id="stockSearch" type="text" placeholder="Search jersey or league...">
+        <button class="btn-action" type="button" data-admin-product-create>
+          <i class="fa-solid fa-plus"></i> Add Product
+        </button>
+        <a class="btn-action" href="/api/admin/export/products.csv" download><i class="fa-solid fa-file-csv"></i> Export Products</a>
+        <button class="btn-action" id="resetStockBtn">
+          <i class="fa-solid fa-rotate"></i> Refresh Stock
+        </button>
+      </div>
+
+      <div class="section-card">
+        <div class="table-wrap">
+          <table class="data-table" id="stockTable">
+            <thead>
+              <tr>
+                <th>Jersey</th>
+                <th>League</th>
+                <th>Season</th>
+                <th>Current Stock</th>
+                <th>Stock by Size</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="stockBody"></tbody>
+          </table>
+        </div>
+        <div class="ek-empty" id="stockEmpty" hidden>
+          <div class="ek-empty-icon"><i class="fa-solid fa-warehouse"></i></div>
+          <h3>No stock changes yet</h3>
+          <p>Adjust quantities here to keep product stock in sync with the storefront.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab: Ratings -->
+    <section class="tab-panel" id="tab-ratings">
+      <div class="page-head">
+        <h1>Customer Ratings</h1>
+        <p class="page-sub">Feedback left by customers after their purchase.</p>
+      </div>
+
+      <!-- Rating summary bar -->
+      <div class="rating-summary" id="ratingSummary">
+        <div class="rating-big" id="ratingBig">-</div>
+        <div class="rating-breakdown" id="ratingBreakdown"></div>
+        <div class="rating-count" id="ratingCount">0 ratings</div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-head">
+          <h2><i class="fa-solid fa-star"></i> Ratings</h2>
+          <a class="btn-action" href="/api/admin/export/ratings.csv" download><i class="fa-solid fa-file-csv"></i> Export Ratings</a>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" id="ratingsTable">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Date</th>
+                <th>Rating</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody id="ratingsBody"></tbody>
+          </table>
+        </div>
+        <div class="ek-empty" id="ratingsEmpty" hidden>
+          <div class="ek-empty-icon"><i class="fa-solid fa-star-half-stroke"></i></div>
+          <h3>No ratings yet</h3>
+          <p>Customer ratings collected after checkout will appear here.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab: Messages & Applications -->
+    <section class="tab-panel" id="tab-messages">
+      <div class="page-head">
+        <h1>Messages &amp; Applications</h1>
+        <p class="page-sub">Contact form submissions and career job applications.</p>
+      </div>
+
+      <div class="toolbar">
+        <input class="search-input" id="msgSearch" type="text" placeholder="Search by name, email or subject...">
+        <select class="filter-select" id="msgTypeFilter">
+          <option value="">All Types</option>
+          <option value="contact">Contact</option>
+          <option value="application">Applications</option>
+        </select>
+        <select class="filter-select" id="msgReadFilter">
+          <option value="">All</option>
+          <option value="unread">Unread only</option>
+        </select>
+        <button class="btn-action" id="markAllReadBtn">
+          <i class="fa-solid fa-check-double"></i> Mark All Read
+        </button>
+        <a class="btn-action" href="/api/admin/export/messages.csv" download><i class="fa-solid fa-file-csv"></i> Export Messages</a>
+      </div>
+
+      <div class="section-card">
+        <div class="table-wrap">
+          <table class="data-table" id="messagesTable">
+            <thead>
+              <tr>
+                <th class="cls-b42fe1"></th>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Subject / Role</th>
+                <th>CV</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="messagesBody"></tbody>
+          </table>
+        </div>
+        <div class="ek-empty" id="messagesEmpty" hidden>
+          <div class="ek-empty-icon"><i class="fa-solid fa-envelope-open"></i></div>
+          <h3>No messages</h3>
+          <p>No contact messages or applications match the current filters.</p>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- /.main-wrap -->
+
+  <!-- Message Detail Modal -->
+  <div class="modal-overlay cls-cb4589" id="msgModal" hidden>
+    <div class="modal-box cls-0bd7f6">
+      <div class="modal-head">
+        <h2 id="msgModalTitle">Message</h2>
+        <button class="modal-close" id="msgModalClose"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div id="msgModalBody" class="modal-body"></div>
+      <div class="modal-foot">
+        <button class="btn-action"   id="msgMarkReadBtn">Mark as Read</button>
+        <button class="btn-secondary" id="msgModalCloseBtn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Detail Modal -->
+  <div class="modal-overlay cls-cb4589" id="orderModal" hidden>
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2 id="modalOrderId">Order Details</h2>
+        <button class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-foot">
+        <label for="modalStatus" class="cls-83e448">Update Status:</label>
+        <select class="filter-select" id="modalStatus">
+          <option>Pending</option>
+          <option>Confirmed</option>
+          <option>Shipped</option>
+          <option>Delivered</option>
+          <option>Cancelled</option>
+        </select>
+        <button class="btn-action" id="modalSaveStatus">Save</button>
+        <button class="btn-secondary" id="modalCloseBtn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script Modules -->
+  
+  
+  
+    <script src="app.js"></script>
+  
+</body>
+</html>
